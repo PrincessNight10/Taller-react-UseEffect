@@ -1,8 +1,88 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+
+// Definir usuarios
+const Users = [
+  { user: 'Leonardo Davinci', password: '1346' },
+  { user: 'Messi', password: '4512' },
+];
 
 export const UserActive = () => {
+  //se define estados a usar en componente
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userName, setUserName] = useState('');
   
+//efecto que se usa cuando cambian user y loggedIn
+  useEffect(() => {
+    if (loggedIn) {
+      const userFound = Users.find(u => u.user === user);
+      if (userFound) {
+        setUserName(userFound.user);
+      }
+    } else {
+      setUserName('');
+    }
+  }, [loggedIn, user]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+//validar usuario y contraseña
+    const validUser = Users.find(u => u.user === user && u.password === password);
+
+    if (validUser) {
+      setLoggedIn(true);
+      setError('');
+    } else {
+      setLoggedIn(false);
+      setError('usuario o contraseña incorrecto');
+    }
+  };
+
+  const handleLogout = () => {
+    setUser('');
+    setPassword('');
+    setLoggedIn(false);
+    setError('');
+    setUserName('');
+  };
+//estructura componente
   return (
-    <div>UserActive</div>
-  )
-}
+    <div>
+      {loggedIn ? (
+        <div>
+          <h1>Bienvenido {userName}</h1>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+      ) : (
+        <div>
+          <h2>Login</h2>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label>Usuario:</label>
+              <input
+                type="text"
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
+              />
+            </div>
+            <div>
+              <label>Contraeña:</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <button type="submit">Login</button>
+            {error && <p>{error}</p>}
+          </form>
+        </div>
+      )}
+    </div>
+  );
+};
+
+

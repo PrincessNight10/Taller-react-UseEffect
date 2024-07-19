@@ -7,7 +7,7 @@ export const Timer = () => {
   const timerRef = useRef(null);
 
   useEffect(() => {
-    _//useefeffct inicio y detebcion temporizador.
+    //useefeffct inicio y detebcion temporizador.
         if (isRunning) {
           //se efecutara el intervalo cada segundo
       timerRef.current = setInterval(() => {

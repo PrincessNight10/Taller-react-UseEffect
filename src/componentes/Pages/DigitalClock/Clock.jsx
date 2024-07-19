@@ -18,7 +18,7 @@ export const Clock = () => {
     return val < 10 ? `0${val}` : `${val}`;
   };
 
-  //creacion de variables y dfuncion flecgha tick
+  //creacion de variables y funcion flecha tick
   const tick = () => {
     const d = new Date();
     const h = d.getHours();
