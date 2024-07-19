@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './Contador.css'
 export const Contador = () => {
   const [C, setC] = useState(0);
 
@@ -15,9 +15,9 @@ export const Contador = () => {
 
 
   return (
-    <div> 
-      <h1>Contador: {C}</h1>
-      <button onClick={incrementarC}>Incrementar</button>
+    <div className='C'>  
+      <h1 className='tittle'>Contador: {C}</h1>
+      <button className = 'R'onClick={incrementarC}>Incrementar</button>
     </div>
   );
 };

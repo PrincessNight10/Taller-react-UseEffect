@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './UserActive.css';
 // Definir usuarios
 const Users = [
   { user: 'Leonardo Davinci', password: '1346' },
@@ -52,16 +52,16 @@ export const UserActive = () => {
   return (
     <div>
       {loggedIn ? (
-        <div>
-          <h1>Bienvenido {userName}</h1>
+        <div className='N'>
+          <h1 className='B'>Bienvenido {userName}</h1>
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
         <div>
-          <h2>Login</h2>
+          <h2 className='B'>Bienvenido Anonimo</h2>
           <form onSubmit={handleSubmit}>
             <div>
-              <label>Usuario:</label>
+              <label className='P'>Usuario:</label>
               <input
                 type="text"
                 value={user}
@@ -69,14 +69,14 @@ export const UserActive = () => {
               />
             </div>
             <div>
-              <label>Contraeña:</label>
+              <label className=''>Contraeña:</label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <button type="submit">Login</button>
+            <button  className ='L' type="submit">Login</button>
             {error && <p>{error}</p>}
           </form>
         </div>

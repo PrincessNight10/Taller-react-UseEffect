@@ -7,7 +7,7 @@ import { Timer } from './componentes/Pages/Timer/Timer.jsx';
 import { Clock } from './componentes/Pages/DigitalClock/Clock.jsx';
 import { UserActive } from './componentes/Pages/userActive/UserActive.jsx';
 import './App.css';
-//se define la estructira  y rutas del proyecto
+//se define la estructura  y rutas del proyecto
 function App() {
   return (
     <>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import './Timer.css'
 export const Timer = () => {
   //definicion estados y referebcia
   const [isRunning, setIsRunning] = useState(false);
@@ -37,15 +37,15 @@ export const Timer = () => {
   };
 
   return (
-    <div>
-      <p>Temporizador: {seconds}s</p>
-      <button onClick={handleStart} disabled={isRunning}>
+    <div className='E'>
+      <p className='T'>Temporizador: {seconds}s</p>
+      <button className ='U'onClick={handleStart} disabled={isRunning}>
         Iniciar
       </button>
-      <button onClick={handleStop} disabled={!isRunning}>
+      <button  className ='U'onClick={handleStop} disabled={!isRunning}>
         Pausar
       </button>
-      <button onClick={handleRestart}>Restablecer</button>
+      <button  className ='U'  onClick={handleRestart}>Restablecer</button>
     </div>
   );
 };
