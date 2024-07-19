@@ -1,0 +1,74 @@
+/* Estilos del componebnte en general */
+.N {
+    text-align: center;
+    margin-bottom: 7rem;
+    
+  }
+  
+  .B {
+    color: #333;
+    margin-left: 35em;
+  }
+  
+  .P {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .L {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .L:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos del formulario */
+  form {
+    margin-top: 57px;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  
+  form div {
+    margin-bottom: 10px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form input[type="text"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0056b3;
+  }
+  
+  form button[type="submit"] {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: aquamarine;
+    color: rgb(19, 18, 18);
+    border: none;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: rgb(39, 201, 147);
+  }
+  
+  form p {
+    color: rgb(14, 13, 13);
+    margin-top: 5px;
+  }
+  
